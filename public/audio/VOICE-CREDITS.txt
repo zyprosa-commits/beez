@@ -1,0 +1,7 @@
+Pip voice: locally generated neural narration, then character pitch and tempo processing.
+Base: Piper en_US-ljspeech-medium, from the official k2-fsa/sherpa-onnx tts-models release.
+Training dataset: LJ Speech, public domain. https://keithito.com/LJ-Speech-Dataset/
+Model card: see MODEL_CARD.txt. Model trained by Bryce Beattie.
+Runtime used for offline generation: sherpa-onnx (Apache-2.0).
+These clips are generated speech and spoken rhythmic chants, not a human actor's performance or recorded singing.
+No person or TV character is impersonated.

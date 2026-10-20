@@ -1,6 +1,6 @@
 # Letterwood
 
-A playful alphabet learning app with Pip the fox, 26 letter lessons, spoken letter recognition, picture matching, achievement milestones, and local progress saving.
+A full-screen, character-led A–Z learning adventure. Pip is an original animated purple creature, and each letter has one continuous 12-chapter episode.
 
 ## Develop
 
@@ -13,13 +13,16 @@ npm run dev -- --port 5173
 
 Build with `npm run build`; serve the production build with `npm run preview`.
 
-Progress is stored in the current browser's localStorage. Spoken lessons use the browser's speech synthesis voices; availability varies by browser and operating system. Google Fonts are optional; system fonts provide a fallback. The app needs no API keys or backend.
+## Episode flow
 
+Meet the letter → say it → bubble hunt → coloring → tracing → movement → sorting → memory → growing chant collection → free drawing → review → Pip’s growth celebration. Completing all chapters advances to the next letter. Each episode suggests about 60 minutes of play, conversation, and creativity; this is recommended pacing, not enforced screen time or an hour of recorded animation.
 
-## Character and interface
+Progress, completed chapters, pictures, drawing strokes, stars, and collected verses are saved under `pip-episodes-v1` in localStorage. No account or backend is needed. The pause screen offers voice muting and calmer movement. OS reduced-motion settings are respected.
 
-Pip is an articulated Three.js character with soft lighting, glossy eyes, blinking, breathing, tail movement, and speech-driven gestures. One shared WebGL renderer draws visible character instances to canvases. A fallback illustration is shown when WebGL is unavailable. Reduced-motion preferences are respected.
+## Character and audio
 
-The floating navigation opens alphabet activities, listening games, and achievements. The missing-rainbow story includes three guided missions, spoken instructions, gentle retries, and saved completion.
+Pip has articulated 3D limbs, floppy ears, expressive eyes, a tooth, a growing collection of accessories, and hop, wave, and dance actions. A modeled 3D island provides the background. One shared renderer draws the character instances; an illustrated fallback appears if WebGL is unavailable.
 
-Speech uses the best available English device voice, preferring natural voices when installed. Animation follows utterance start, word-boundary, pause, resume, end, and error events; mouth motion is stylized rather than phoneme-accurate lip sync. Sound can be muted, and closing an activity cancels its narration. Voice quality depends on the browser and installed voices; no remote voice service or credentials are required.
+There are 158 bundled neural speech clips with consistent pitch/tempo character processing. Actual audio amplitude drives mouth movement. There are no synthetic button tones or browser system voices. The chant collection adds a verse per letter and can play collected verses in order. These are spoken rhythmic chants, not professionally performed singing.
+
+Voice generation is optional: `scripts/generate-voice.py` documents dependencies and model location. MP3s and the manifest are already included, so ordinary installs/builds need no voice model, API key, or backend. See `public/audio/VOICE-CREDITS.txt` for the public-domain LJ Speech model attribution. Google Fonts are optional; system fonts provide a fallback.
